@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>mx.unam.fi.die.poo.g7</groupId>
+    <artifactId>hospital-e0</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <!-- Indicamos que la raíz del código fuente está dentro de la estructura de paquetes -->
+        <sourceDirectory>mx/unam/fi/die/poo/g7</sourceDirectory>
+
+        <plugins>
+            <!-- 1. Plugin de compilación: solo compila la carpeta de tu proyecto actual -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <includes>
+                        <!-- Esto le dice a Maven que ignore cualquier otra carpeta 
+                             y solo tome en cuenta 'e0/py2' -->
+                        <include>e0/py2/**/**/*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- 2. Plugin Shade: empaqueta todo en un Fat JAR ejecutable -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <!-- Reemplaza con la ruta completa de la clase que tiene el método main -->
+                                    <mainClass>mx.unam.fi.die.poo.g7.e0.py2.src.hospital.Main</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
