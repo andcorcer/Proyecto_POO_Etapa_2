@@ -12,4 +12,4 @@
 
 **Brigada:** 6  
 
-Link a archivo LaTeX ``
+Link a archivo LaTeX `https://es.overleaf.com/project/6adace5d4cd4403c5ae32999/share#86c5fc41f6d9a40ecd05fe910740899bb63a431b0ab73a5c`
