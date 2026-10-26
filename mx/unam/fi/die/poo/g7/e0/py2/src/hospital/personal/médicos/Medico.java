@@ -56,11 +56,13 @@ public abstract class Medico implements AtencionMedica {
   // MÉTODOS
 
   // Método que registra todo el objeto Medico llamando al método 'registroMedico' del sistema con el objeto entero como argumento
+  @Override
   public void registroEnSistema(Sistema sistema) {
     sistema.registroMedico(this);
   }
 
   // Método para dar tratamiento a un paciente después de una consulta
+  @Override
   public void darTratamiento(Paciente paciente) {
     // Verificamos si la lista de pacientes no está vacía
     if (!listaPacientes.isEmpty()) {
@@ -122,6 +124,7 @@ public abstract class Medico implements AtencionMedica {
   }
 
   // Método para dar consulta a un paciente
+  @Override
   public void darConsulta(Paciente paciente) {
     // Verificamos si el paciente está en la lista de pacientes
     if (listaPacientes.contains(paciente)) {
@@ -177,6 +180,7 @@ public abstract class Medico implements AtencionMedica {
   }
 
   // Método para ver los pacientes del médico
+  @Override
   public void verListaPacientes() {
     // Ordenamos alfabeticamente de manera descendente 'listaPacientes'
     listaPacientes.sort(Comparator.comparing(Paciente::getNombre).reversed());
@@ -191,6 +195,7 @@ public abstract class Medico implements AtencionMedica {
   }
 
   // Método para finalizar la consulta del paciente actual
+  @Override
   public void finalizarConsulta() {
     // Verificamos si hay un paciente siendo consultado actualmente
     if (pacienteSiendoConsultado != null) {
@@ -212,7 +217,7 @@ public abstract class Medico implements AtencionMedica {
   // Método que imprime una solicitud por paciente (abstracto porque va a ser implementado por las subclases)
   public abstract void solicitarPaciente();
 
-  // Sobreescribimos el método toString para mostrar información del enfermero (abstracto porque va a ser implementado por las subclases)
+  // Sobreescribimos el método toString para mostrar información del médico (abstracto porque va a ser implementado por las subclases)
   @Override
   public abstract String toString();
 }
