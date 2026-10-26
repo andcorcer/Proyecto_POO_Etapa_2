@@ -14,25 +14,22 @@
     </properties>
 
     <build>
-        <!-- Indicamos que la raíz del código fuente está dentro de la estructura de paquetes -->
-        <sourceDirectory>mx/unam/fi/die/poo/g7</sourceDirectory>
+        <sourceDirectory>.</sourceDirectory>
 
         <plugins>
-            <!-- 1. Plugin de compilación: solo compila la carpeta de tu proyecto actual -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
                     <includes>
-                        <!-- Esto le dice a Maven que ignore cualquier otra carpeta 
-                             y solo tome en cuenta 'e0/py2' -->
-                        <include>e0/py2/**/**/*.java</include>
+                        <!-- Se incluyen solo los archivos correspondientes a 'e0/py2' -->
+                        <include>mx/unam/fi/die/poo/g7/e0/py2/**/**/*.java</include>
                     </includes>
                 </configuration>
             </plugin>
 
-            <!-- 2. Plugin Shade: empaqueta todo en un Fat JAR ejecutable -->
+            <!-- Fat JAR ejecutable -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -46,7 +43,6 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <!-- Reemplaza con la ruta completa de la clase que tiene el método main -->
                                     <mainClass>mx.unam.fi.die.poo.g7.e0.py2.src.hospital.Main</mainClass>
                                 </transformer>
                             </transformers>

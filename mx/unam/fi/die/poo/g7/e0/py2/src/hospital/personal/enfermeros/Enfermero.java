@@ -53,11 +53,13 @@ public abstract class Enfermero implements AtencionEnfermero {
   // MÉTODOS
 
   // Método que registra todo el objeto Enfermero llamando al método 'registroEnfermero' del sistema con el objeto entero como argumento
+  @Override
   public void registroEnSistema(Sistema sistema) {
     sistema.registroEnfermero(this);
   }
 
   // Método que agrega paciente a la lista de pacientes siendo cuidados
+  @Override
   public void agregarPaciente(Paciente paciente) {
 
     // Si el paciente es de tipo PacienteEspecialidad, se procede a verificar la especialidad
@@ -119,6 +121,7 @@ public abstract class Enfermero implements AtencionEnfermero {
   }
 
   // Método para ver los pacientes del enfermero
+  @Override
   public void verListaPacientes() {
 
     // Ordenamos alfabeticamente de manera descendente 'listaPacientes'
@@ -134,6 +137,7 @@ public abstract class Enfermero implements AtencionEnfermero {
   }
 
   // Método para dar tratamiento al paciente
+  @Override
   public void darTratamiento(Paciente paciente) {
 
     // Si el enfermero no tiene pacientes

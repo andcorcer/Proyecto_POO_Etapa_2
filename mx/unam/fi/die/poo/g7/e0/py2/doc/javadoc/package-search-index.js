@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"mx.unam.fi.die.poo.g7.e0.py2.src.hospital.personal.enfermeros"},{"l":"mx.unam.fi.die.poo.g7.e0.py2.src.hospital.personal.médicos"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"mx.unam.fi.die.poo.g7.e0.py2.src.hospital"}];updateSearchResults();

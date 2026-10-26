@@ -20,6 +20,9 @@ public interface AtencionMedica {
   // Método para dar tratamiento a un paciente después de una consulta
   public void darTratamiento(Paciente paciente);
 
+  // Método para finalizar la consulta del paciente actual
+  public void finalizarConsulta();
+
   // Imprimimos todos los pacientes en la lista de manera alfabética descendente
   public void verListaPacientes();
 }

@@ -53,11 +53,13 @@ public abstract class Paciente implements AtencionPaciente {
   // MÉTODOS
 
   // Método que registra todo el objeto Paciente llamando al método 'registroPaciente' del sistema con el objeto entero como argumento
+  @Override 
   public void registroEnSistema(Sistema sistema) {
     sistema.registroPaciente(this);
   }
 
   // Método que muestra un mensaje si el usuario está en tratamiento
+  @Override 
   public void verTratamiento() {
     if (enTratamiento) {
       System.out.println("El paciente " + nombre + " está en tratamiento.");
@@ -67,6 +69,7 @@ public abstract class Paciente implements AtencionPaciente {
   }
 
   // Método que muestra un mensaje si el usuario está en consulta
+  @Override 
   public void verConsulta() {
     if (enConsulta) {
       System.out.println("El paciente " + nombre + " está en consulta.");
@@ -76,6 +79,7 @@ public abstract class Paciente implements AtencionPaciente {
   }
 
   // Método que imprime una solicitud por consulta (abstracto porque va a ser implementado por las subclases)
+  @Override 
   public abstract void solicitarConsulta();
 
   // Sobreescribimos el método toString para mostrar información del paciente (abstracto porque va a ser implementado por las subclases)
